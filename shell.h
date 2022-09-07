@@ -80,9 +80,6 @@ int handle_args(int *exe_ret);
 int check_args(char **args);
 void free_args(char **args, char **front);
 char **replace_aliases(char **args);
-char *_strncpy(char *dest, char *src, int n);
-char *_strncat(char *dest, char *src, int n);
-char *_strchr(char *s, char c);
 
 /* String functions */
 int _strlen(const char *s);

@@ -6,7 +6,7 @@ int run_args(char **args, char **front, int *exe_ret);
 int handle_args(int *exe_ret);
 int check_args(char **args);
 
-/**  
+/**
  * get_args - Gets a command from standard input.
  * @line: A buffer to store the command.
  * @exe_ret: The return value of the last executed command.
@@ -18,7 +18,7 @@ char *get_args(char *line, int *exe_ret)
 {
 	size_t n = 0;
 	ssize_t read;
-	char *prompt = "$ ";  
+	char *prompt = "$ ";
 
 	if (line)
 		free(line);
@@ -27,7 +27,7 @@ char *get_args(char *line, int *exe_ret)
 	if (read == -1)
 		return (NULL);
 	if (read == 1)
-	{  
+	{
 		hist++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, prompt, 2);
@@ -167,7 +167,7 @@ int handle_args(int *exe_ret)
 	{
 		if (_strncmp(args[index], ";", 1) == 0)
 		{
-			free(args[index]);  
+			free(args[index]);
 			args[index] = NULL;
 			ret = call_args(args, front, exe_ret);
 			args = &args[++index];
